@@ -1,0 +1,12 @@
+[Unit]
+Description=Start-up intercom system on boot
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/bin/bash -c './home/debian/intercom/bin/intercom'
+ExecStart=/bin/bash -c './home/debian/intercom/bin/lcd'
+ExecStart=/bin/bash -c './home/debian/intercom/bin/watchdog_run'
+
+[Install]
+WantedBy=multi-user.target
